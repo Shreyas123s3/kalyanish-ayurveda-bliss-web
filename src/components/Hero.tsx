@@ -1,0 +1,42 @@
+
+import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
+
+export const Hero = () => {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
+      <div className="text-center max-w-4xl mx-auto">
+        <div className="animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-serif text-amber-800 mb-6 leading-tight">
+            Ancient Wisdom.
+            <br />
+            <span className="text-green-700">Modern Healing.</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-amber-700 mb-8 font-light leading-relaxed">
+            A sanctuary for holistic Ayurvedic transformation
+            <br />
+            where ancient traditions meet contemporary wellness
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            size="lg"
+          >
+            <Sparkles className="w-5 h-5 mr-2" />
+            Book Your Healing Journey
+          </Button>
+        </div>
+        
+        {/* Floating herbs animation */}
+        <div className="absolute top-1/4 left-10 animate-bounce opacity-60">
+          <div className="w-4 h-4 bg-green-400 rounded-full"></div>
+        </div>
+        <div className="absolute top-1/3 right-10 animate-bounce opacity-40" style={{ animationDelay: '1s' }}>
+          <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
+        </div>
+        <div className="absolute bottom-1/4 left-1/4 animate-bounce opacity-50" style={{ animationDelay: '2s' }}>
+          <div className="w-2 h-2 bg-green-300 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
