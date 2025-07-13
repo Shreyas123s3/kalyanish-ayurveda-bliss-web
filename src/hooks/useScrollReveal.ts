@@ -8,10 +8,10 @@ interface UseScrollRevealOptions {
   delay?: number;
 }
 
-export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
+export const useScrollReveal = <T extends HTMLElement = HTMLDivElement>(options: UseScrollRevealOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<T>(null);
 
   const {
     threshold = 0.1,
@@ -48,9 +48,9 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
   return { elementRef, isVisible };
 };
 
-export const useParallaxScroll = (speed: number = 0.5) => {
+export const useParallaxScroll = <T extends HTMLElement = HTMLDivElement>(speed: number = 0.5) => {
   const [offset, setOffset] = useState(0);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<T>(null);
 
   useEffect(() => {
     const handleScroll = () => {
