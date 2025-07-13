@@ -34,12 +34,12 @@ export const AboutUs = () => {
           
           <div className="relative group">
             <div className="bg-white/30 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/50 hover:shadow-2xl hover:shadow-green-500/20 hover:scale-105 transition-all duration-500">
-              <div className="aspect-square bg-gradient-to-br from-green-200 to-amber-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <div className="text-center text-amber-800 z-10">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">🌿</div>
-                  <p className="text-lg font-serif">Holistic Healing</p>
-                  <p className="text-sm">Mind • Body • Spirit</p>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden relative">
+                <img 
+                  src="/lovable-uploads/dc89f9df-fc45-43f9-a995-3c5e6fb9df84.png" 
+                  alt="Ayurvedic consultation room" 
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>

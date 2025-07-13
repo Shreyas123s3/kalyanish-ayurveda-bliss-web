@@ -7,6 +7,15 @@ export const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
       <div className="text-center max-w-4xl mx-auto">
         <div className="animate-fade-in">
+          {/* Kalyanish Ayurveda Logo */}
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/923502a0-6e93-44a1-b556-0c49735d8a86.png" 
+              alt="Kalyanish Ayurveda Logo" 
+              className="mx-auto w-auto h-32 md:h-40 object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
+            />
+          </div>
+          
           <h1 className="text-5xl md:text-7xl font-serif text-amber-800 mb-6 leading-tight">
             Ancient Wisdom.
             <br />
