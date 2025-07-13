@@ -1,9 +1,20 @@
 
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 export const AboutUs = () => {
+  const { elementRef, isVisible } = useScrollReveal({ triggerOnce: true });
+
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div 
+          ref={elementRef}
+          className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-serif text-amber-800 mb-6">
               About Our <span className="text-green-700">Sanctuary</span>
