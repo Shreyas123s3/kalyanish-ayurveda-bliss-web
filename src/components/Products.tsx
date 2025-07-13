@@ -1,5 +1,4 @@
 
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { EnhancedButton } from "@/components/EnhancedButton";
 
 const products = [
@@ -8,38 +7,20 @@ const products = [
 ];
 
 export const Products = () => {
-  const { elementRef, isVisible } = useScrollReveal({ triggerOnce: true });
-
   return (
     <section className="py-20 px-4 bg-white/20 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
-        <h2 
-          className={`text-4xl md:text-5xl font-serif text-amber-800 text-center mb-16 transition-all duration-1000 ${
-            isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <h2 className="text-4xl md:text-5xl font-serif text-amber-800 text-center mb-16">
           Premium <span className="text-green-700">Healthcare Products</span>
         </h2>
         
-        <div 
-          ref={elementRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {products.map((product, index) => (
             <div 
               key={index}
-              className={`bg-white/40 backdrop-blur-md rounded-xl p-6 shadow-lg border border-amber-200/50 
+              className="bg-white/40 backdrop-blur-md rounded-xl p-6 shadow-lg border border-amber-200/50 
                 hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-2 hover:scale-105
-                transition-all duration-500 group cursor-pointer
-                ${isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-10'
-                }`}
-              style={{ 
-                transitionDelay: isVisible ? `${index * 100}ms` : '0ms' 
-              }}
+                transition-all duration-500 group cursor-pointer"
             >
               <div className="text-center relative">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-300 to-amber-300 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
