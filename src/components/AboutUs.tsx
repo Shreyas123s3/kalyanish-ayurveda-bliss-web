@@ -1,9 +1,20 @@
 
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 export const AboutUs = () => {
+  const { elementRef, isVisible } = useScrollReveal({ triggerOnce: true });
+
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div 
+          ref={elementRef}
+          className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-serif text-amber-800 mb-6">
               About Our <span className="text-green-700">Sanctuary</span>
@@ -21,14 +32,15 @@ export const AboutUs = () => {
             </div>
           </div>
           
-          <div className="relative">
-            <div className="bg-white/30 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/50">
-              <div className="aspect-square bg-gradient-to-br from-green-200 to-amber-200 rounded-2xl flex items-center justify-center">
-                <div className="text-center text-amber-800">
-                  <div className="text-6xl mb-4">🌿</div>
+          <div className="relative group">
+            <div className="bg-white/30 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-amber-200/50 hover:shadow-2xl hover:shadow-green-500/20 hover:scale-105 transition-all duration-500">
+              <div className="aspect-square bg-gradient-to-br from-green-200 to-amber-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                <div className="text-center text-amber-800 z-10">
+                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">🌿</div>
                   <p className="text-lg font-serif">Holistic Healing</p>
                   <p className="text-sm">Mind • Body • Spirit</p>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
           </div>
