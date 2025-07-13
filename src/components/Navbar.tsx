@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,11 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Leaf className="w-8 h-8 text-green-600 animate-pulse" />
+            <img 
+              src="/lovable-uploads/923502a0-6e93-44a1-b556-0c49735d8a86.png" 
+              alt="Kalyanish Ayurveda Logo" 
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-2xl font-serif text-amber-800 font-bold">
               Kalyanish Ayurveda
             </span>
