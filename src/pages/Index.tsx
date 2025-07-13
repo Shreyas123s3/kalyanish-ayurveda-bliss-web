@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/Hero";
 import { AboutUs } from "@/components/AboutUs";
 import { Doctor } from "@/components/Doctor";
@@ -11,14 +12,12 @@ import { Navbar } from "@/components/Navbar";
 import { DecorativeElements } from "@/components/DecorativeElements";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { AdvancedFloatingElements } from "@/components/AdvancedFloatingElements";
-import { AdvancedSectionDivider } from "@/components/AdvancedSectionDivider";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-green-50 to-amber-50 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-green-50 to-amber-50">
       <ScrollProgress />
-      <AdvancedFloatingElements />
+      <DecorativeElements />
       
       <div 
         className="fixed inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
@@ -29,24 +28,24 @@ const Index = () => {
         <Navbar />
         <Hero />
         
-        <AdvancedSectionDivider variant="herbal-wave" />
+        <SectionDivider variant="leaves" />
         <AboutUs />
         
-        <AdvancedSectionDivider variant="mystical" />
+        <SectionDivider variant="vines" />
         <Doctor />
         
         <WhyChooseUs />
         
-        <AdvancedSectionDivider variant="lotus" />
+        <SectionDivider variant="lotus" />
         <Panchakarma />
         
-        <AdvancedSectionDivider variant="leaves" />
+        <SectionDivider variant="leaves" />
         <Treatments />
         
-        <AdvancedSectionDivider variant="vines" />
+        <SectionDivider variant="vines" />
         <Products />
         
-        <AdvancedSectionDivider variant="mystical" />
+        <SectionDivider variant="lotus" />
         <PatientTestimonials />
         <ContactFooter />
       </div>
