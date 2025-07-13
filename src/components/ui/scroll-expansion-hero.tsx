@@ -145,13 +145,25 @@ const ScrollExpandMedia = ({
         <div className='container mx-auto flex flex-col items-center justify-center relative z-10 px-4'>
           <div className='flex flex-col items-center justify-center w-full h-[100vh] relative'>
             
+            {/* Golden Glow Behind Video */}
+            <motion.div
+              className='absolute z-15 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
+              style={{
+                width: `${currentWidth + 60}px`,
+                height: `${currentHeight + 60}px`,
+                background: `radial-gradient(ellipse, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0.1) 30%, transparent 70%)`,
+                filter: 'blur(20px)',
+                opacity: scrollProgress * 0.8
+              }}
+            />
+
             {/* Smooth Expanding Media Container */}
             <motion.div
               className='absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl overflow-hidden'
               style={{
                 width: `${currentWidth}px`,
                 height: `${currentHeight}px`,
-                boxShadow: `0px 0px ${10 + scrollProgress * 40}px rgba(0, 0, 0, ${0.4 + scrollProgress * 0.4})`,
+                boxShadow: `0px 0px ${10 + scrollProgress * 40}px rgba(251, 191, 36, ${0.2 + scrollProgress * 0.3})`,
                 borderRadius: `${Math.max(8, 16 - scrollProgress * 8)}px`
               }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -211,7 +223,29 @@ const ScrollExpandMedia = ({
               )}
             </motion.div>
 
-            {/* Golden Text Overlay - Restored */}
+            {/* Golden Text Overlay on Video */}
+            <motion.div
+              className='absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'
+              style={{
+                opacity: scrollProgress > 0.6 ? (scrollProgress - 0.6) * 2.5 : 0,
+                transform: `translate(-50%, -50%) scale(${0.8 + scrollProgress * 0.2})`
+              }}
+            >
+              <motion.h2
+                className='text-2xl md:text-3xl lg:text-4xl font-serif text-amber-200 drop-shadow-2xl mb-2'
+                style={{ textShadow: '0 0 20px rgba(251, 191, 36, 0.5)' }}
+              >
+                Discover Your Healing Journey
+              </motion.h2>
+              <motion.p
+                className='text-sm md:text-base text-amber-300/90 font-light tracking-wide drop-shadow-lg'
+                style={{ textShadow: '0 0 10px rgba(251, 191, 36, 0.3)' }}
+              >
+                Ancient Wisdom • Modern Healing
+              </motion.p>
+            </motion.div>
+
+            {/* Initial Golden Text Overlay - Before Expansion */}
             <motion.div
               className={`flex items-center justify-center text-center gap-6 w-full relative z-30 flex-col ${
                 textBlend ? 'mix-blend-difference' : ''
@@ -223,8 +257,11 @@ const ScrollExpandMedia = ({
             >
               {date && (
                 <motion.p
-                  className='text-2xl md:text-3xl text-amber-300 font-light tracking-wide'
-                  style={{ transform: `translateX(-${textTransform * 0.5}px)` }}
+                  className='text-2xl md:text-3xl text-amber-300 font-light tracking-wide drop-shadow-lg'
+                  style={{ 
+                    transform: `translateX(-${textTransform * 0.5}px)`,
+                    textShadow: '0 0 15px rgba(251, 191, 36, 0.4)'
+                  }}
                 >
                   {date}
                 </motion.p>
@@ -232,14 +269,20 @@ const ScrollExpandMedia = ({
               
               <motion.h2
                 className='text-5xl md:text-6xl lg:text-7xl font-bold text-amber-200 drop-shadow-2xl'
-                style={{ transform: `translateX(-${textTransform * 0.8}px)` }}
+                style={{ 
+                  transform: `translateX(-${textTransform * 0.8}px)`,
+                  textShadow: '0 0 25px rgba(251, 191, 36, 0.5)'
+                }}
               >
                 {firstWord}
               </motion.h2>
               
               <motion.h2
                 className='text-5xl md:text-6xl lg:text-7xl font-bold text-amber-200 drop-shadow-2xl'
-                style={{ transform: `translateX(${textTransform * 0.8}px)` }}
+                style={{ 
+                  transform: `translateX(${textTransform * 0.8}px)`,
+                  textShadow: '0 0 25px rgba(251, 191, 36, 0.5)'
+                }}
               >
                 {restOfTitle}
               </motion.h2>
@@ -249,7 +292,8 @@ const ScrollExpandMedia = ({
                   className='text-amber-300/90 text-lg font-medium mt-8 drop-shadow-lg'
                   style={{ 
                     opacity: Math.max(0, 1 - scrollProgress * 3),
-                    transform: `translateY(${textTransform * 0.3}px)`
+                    transform: `translateY(${textTransform * 0.3}px)`,
+                    textShadow: '0 0 10px rgba(251, 191, 36, 0.3)'
                   }}
                 >
                   {scrollToExpand}
@@ -258,7 +302,7 @@ const ScrollExpandMedia = ({
             </motion.div>
           </div>
 
-          {/* Content Section */}
+          {/* Content Section - Fixed Golden Text */}
           {showContent && (
             <motion.section
               className='w-full px-8 py-16 md:px-16 lg:py-24 relative z-10'
@@ -268,8 +312,20 @@ const ScrollExpandMedia = ({
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent backdrop-blur-sm' />
-              <div className='relative z-10'>
-                {children}
+              <div className='relative z-10 text-center'>
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-3xl md:text-4xl font-serif text-amber-200 mb-6 drop-shadow-lg" style={{ textShadow: '0 0 15px rgba(251, 191, 36, 0.4)' }}>
+                    Discover Your Healing Journey
+                  </h2>
+                  <p className="text-lg text-amber-300/90 mb-8 leading-relaxed drop-shadow-md" style={{ textShadow: '0 0 10px rgba(251, 191, 36, 0.2)' }}>
+                    Experience the transformative power of authentic Ayurveda through our immersive video journey. 
+                    Watch as ancient wisdom meets modern healing techniques in our sacred sanctuary of wellness.
+                  </p>
+                  <p className="text-lg text-amber-300/90 leading-relaxed drop-shadow-md" style={{ textShadow: '0 0 10px rgba(251, 191, 36, 0.2)' }}>
+                    This interactive experience showcases the essence of Kalyanish Ayurveda - where every treatment 
+                    is a step towards holistic transformation and inner balance.
+                  </p>
+                </div>
               </div>
             </motion.section>
           )}
