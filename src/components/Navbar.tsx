@@ -13,7 +13,7 @@ export const Navbar = () => {
             <img 
               src="/lovable-uploads/923502a0-6e93-44a1-b556-0c49735d8a86.png" 
               alt="Kalyanish Ayurveda Logo" 
-              className="w-8 h-8 object-contain"
+              className="w-12 h-12 object-contain"
             />
             <span className="text-2xl font-serif text-amber-800 font-bold">
               Kalyanish Ayurveda

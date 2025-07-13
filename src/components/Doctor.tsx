@@ -12,8 +12,12 @@ export const Doctor = () => {
         <div className="bg-white/40 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-amber-200/50">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="relative">
-              <div className="w-48 h-48 bg-gradient-to-br from-green-200 to-amber-200 rounded-full flex items-center justify-center shadow-xl">
-                <div className="text-8xl">👩‍⚕️</div>
+              <div className="w-48 h-48 rounded-full overflow-hidden shadow-xl">
+                <img 
+                  src="/lovable-uploads/ee95bc43-9072-47ce-a91c-01b1a3c7d183.png" 
+                  alt="Dr. Swati Yadav" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -top-2 -right-2 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-2xl animate-pulse">
                 🌿
