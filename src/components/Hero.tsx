@@ -1,4 +1,5 @@
 
+
 import { EnhancedButton } from "@/components/EnhancedButton";
 import { Sparkles } from "lucide-react";
 
@@ -12,7 +13,7 @@ export const Hero = () => {
             <img 
               src="/lovable-uploads/923502a0-6e93-44a1-b556-0c49735d8a86.png" 
               alt="Kalyanish Ayurveda Logo" 
-              className="mx-auto w-auto h-32 md:h-40 object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
+              className="mx-auto w-auto h-40 md:h-56 object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
             />
           </div>
           
@@ -49,3 +50,4 @@ export const Hero = () => {
     </section>
   );
 };
+
