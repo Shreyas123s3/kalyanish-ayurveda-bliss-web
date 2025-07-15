@@ -68,18 +68,6 @@ export const ContactFooter = () => {
             </form>
           </div>
         </div>
-        
-        <div className="mt-20 text-center py-8 border-t border-amber-300/50">
-          <div className="flex justify-center mb-4">
-            <div className="text-4xl animate-pulse">🌿</div>
-          </div>
-          <p className="text-amber-700">
-            © 2024 Kalyanish Ayurveda & Panchakarma Center. All rights reserved.
-          </p>
-          <p className="text-amber-600 text-sm mt-2">
-            Restoring balance through ancient wisdom
-          </p>
-        </div>
       </div>
     </section>
   );

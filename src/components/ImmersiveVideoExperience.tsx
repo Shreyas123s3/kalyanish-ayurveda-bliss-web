@@ -5,7 +5,7 @@ export const ImmersiveVideoExperience = () => {
   return (
     <ScrollExpandMedia
       mediaType="video"
-      mediaSrc="https://www.youtube.com/embed/Y7oGM1kpRpY?si=mqZL3VLVFHnzzhiX&autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=Y7oGM1kpRpY"
+      mediaSrc="https://www.youtube.com/embed/Y7oGM1kpRpY?start=76&autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=Y7oGM1kpRpY"
       bgImageSrc="/lovable-uploads/c8953e53-440c-489c-a053-842ca5d6f053.png"
       title="Ancient Wisdom Modern Healing"
       date="Kalyanish Ayurveda"

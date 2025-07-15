@@ -40,6 +40,10 @@ const products = [
 export const Products = () => {
   const { elementRef, isVisible } = useScrollReveal({ triggerOnce: true });
 
+  const handleStoreClick = () => {
+    window.open('https://wa.me/919975056893', '_blank');
+  };
+
   return (
     <section className="py-20 px-4 bg-white/20 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
@@ -89,7 +93,10 @@ export const Products = () => {
         </div>
         
         <div className="text-center">
-          <EnhancedButton className="bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white px-8 py-3 rounded-full shadow-lg">
+          <EnhancedButton 
+            onClick={handleStoreClick}
+            className="bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white px-8 py-3 rounded-full shadow-lg"
+          >
             Visit Store / Contact to Purchase
           </EnhancedButton>
         </div>
