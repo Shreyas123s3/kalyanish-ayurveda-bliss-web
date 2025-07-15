@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-amber-200/50">
+    <nav className="fixed top-0 w-full z-50 bg-amber-50/90 backdrop-blur-md border-b border-amber-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
@@ -37,7 +37,7 @@ export const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/90 backdrop-blur-md">
+        <div className="md:hidden bg-amber-50/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a href="#home" className="block px-3 py-2 text-amber-800 hover:text-green-600">Home</a>
             <a href="#about" className="block px-3 py-2 text-amber-800 hover:text-green-600">About</a>

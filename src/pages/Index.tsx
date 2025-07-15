@@ -7,6 +7,7 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Panchakarma } from "@/components/Panchakarma";
 import { Treatments } from "@/components/Treatments";
 import { Products } from "@/components/Products";
+import { ExclusiveRange } from "@/components/ExclusiveRange";
 import { PatientTestimonials } from "@/components/PatientTestimonials";
 import { ContactFooter } from "@/components/ContactFooter";
 import { Navbar } from "@/components/Navbar";
@@ -49,6 +50,9 @@ const Index = () => {
         <Products />
         
         <SectionDivider variant="lotus" />
+        <ExclusiveRange />
+        
+        <SectionDivider variant="leaves" />
         <PatientTestimonials />
         <ContactFooter />
       </div>
